@@ -4,7 +4,7 @@
     "details": [
       {
         "appID": "PCYKZG27KQ.com.titorama.klaverjastotaal",
-        "paths": [ "/", "/?tafel=*", "/tafel/*" ]
+        "paths": [ "/", "/tafel/*" ]
       }
     ]
   }
