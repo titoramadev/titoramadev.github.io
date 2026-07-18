@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.titorama.klaverjastotaal",
+      "sha256_cert_fingerprints": [
+        "VUL_HIER_DE_SHA256_FINGERPRINT_IN"
+      ]
+    }
+  }
+]
