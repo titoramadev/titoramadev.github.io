@@ -3,7 +3,7 @@
     "apps": [],
     "details": [
       {
-        "appID": "VUL_HIER_JE_APPLE_TEAM_ID_IN.com.titorama.klaverjastotaal",
+        "appID": "PCYKZG27KQ.com.titorama.klaverjastotaal",
         "paths": [ "/", "/?tafel=*", "/tafel/*" ]
       }
     ]
