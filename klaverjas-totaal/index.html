@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Klaverjas Totaal</title>
+  <meta name="description" content="Speel Klaverjassen op Klaverjas Totaal.">
+  <style>
+    html, body { margin: 0; height: 100%; }
+    body {
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      background: radial-gradient(circle at 50% 35%, #37835F 0%, #2E7156 60%, #24523F 100%);
+      color: #F2EBD9; display: flex; align-items: center; justify-content: center;
+      text-align: center; padding: 24px; box-sizing: border-box;
+    }
+    .kaart { max-width: 360px; }
+    h1 { font-size: 22px; margin: 0 0 6px; }
+    p { font-size: 15px; line-height: 1.5; opacity: .92; margin: 0 0 18px; }
+    .knoppen { display: flex; flex-direction: column; gap: 10px; }
+    a.store {
+      display: block; padding: 12px 18px; border-radius: 999px;
+      background: #F2EBD9; color: #24523F; font-weight: 800; font-size: 15px;
+      text-decoration: none; border: 2px solid #24523F;
+    }
+    .klein { font-size: 12.5px; opacity: .8; margin-top: 16px; }
+  </style>
+</head>
+<body>
+  <div class="kaart">
+    <div style="font-size:40px; margin-bottom:8px;">🃏</div>
+    <h1>Klaverjas Totaal</h1>
+    <p id="melding">Je wordt doorgestuurd naar de app…</p>
+    <div class="knoppen">
+      <a class="store" id="android" href="https://play.google.com/store/apps/details?id=com.titorama.klaverjastotaal">Openen in Google Play (Android)</a>
+      <a class="store" id="apple" href="https://apps.apple.com/app/id6786210006">Openen in de App Store (iPhone)</a>
+    </div>
+    <div class="klein">Lukt het automatisch doorsturen niet? Kies hierboven je toestel.</div>
+  </div>
+ 
+  <script>
+    (function () {
+      var apple = "https://apps.apple.com/app/id6786210006";
+      var play  = "https://play.google.com/store/apps/details?id=com.titorama.klaverjastotaal";
+      var ua = navigator.userAgent || navigator.vendor || "";
+      var isIOS = (/iPad|iPhone|iPod/.test(ua) && !window.MSStream) ||
+                  (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1); // iPad iOS 13+
+      var isAndroid = /android/i.test(ua);
+      if (isIOS) {
+        location.replace(apple);
+      } else if (isAndroid) {
+        location.replace(play);
+      } else {
+        // Desktop of onbekend: niet automatisch doorsturen, laat de bezoeker kiezen.
+        document.getElementById("melding").textContent =
+          "Kies hieronder de winkel die bij je toestel past.";
+      }
+    })();
+  </script>
+</body>
+</html>
